@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+<style media="screen">
+table.redTable {
+border: 2px solid #607d8b;
+background-color: #EEE7DB;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+}
+table.redTable tbody td {
+font-size: 13px;
+}
+table.redTable tr:nth-child(even) {
+background: #ffffff;
+}
+table.redTable thead {
+background: #607d8b;
+}
+table.redTable thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #607d8b;
+}
+table.redTable thead th:first-child {
+border-left: none;
+}
+
+table.redTable tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #607d8b;
+}
+table.redTable tfoot td {
+font-size: 13px;
+}
+table.redTable tfoot .links {
+text-align: right;
+}
+table.redTable tfoot .links a{
+display: inline-block;
+background: #FFFFFF;
+color: #607d8b;
+padding: 2px 8px;
+border-radius: 5px;
+}
+</style>
+  </head>
+{% include "library/navbaradmin.html" %}
+    <br>
+    <br>
+    <h3 class="p-3 mb-2 bg-success text-white" style = 'font-size: 30px;text-align:center;'>All Available Books</h3>
+{#{% if books%}#}
+<div class="container">
+  <table class="table table-hover table-condensed table-striped table-bordered">
+
+
+{#<h1>Books</h1>#}
+
+{#<table border="1">#}
+<thead>
+    <tr>
+    <th>Name</th>
+        <th>author</th>
+        <th>category</th>
+    <th>Pages</th>
+{#    <th>View</th>#}
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for book in object_list %}
+    <tr>
+    <td>{{ book.name }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.category }}</td>
+    <td>{{ book.pages }}</td>
+{#    <td><a href="{% url "book_view" book.id %}">view</a></td>#}
+    <td><a href="{% url "book_edit" book.id %}">edit</a></td>
+    <td><a href="{% url "book_delete" book.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{#<a href="{% url "addbook" %}">New</a>#}
+{#      <a href="addbook" class="btn btn-primary btn-lg active" style="border-radius: 0%;" role="button" aria-pressed="true">Add Book To Library</a><br><br>#}
+</div>
+</html>
+

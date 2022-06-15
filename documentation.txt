@@ -1,0 +1,36 @@
+This project is done with PyCharm pro software App
+-Start the Django project
+install app with py manage.py startapp appname
+enter the name in the list of installed apps in settings.py
+
+In settings .py
+Import MySqldb
+change the databse name to mysqldb from sqllite
+connect to the database followed with name 
+
+ * Creating models
+  After writing code in models 
+- Then, do make database migrations: python manage.py makemigrations
+- python manage.py migrate
+- And finally, run the application: python manage.py runserver
+
+* Creating Views
+ In views we have used in built user for signup/login
+ and generic views for edit and delete
+ After writing the code
+ make sure the template files are attached with success
+
+- Create Template folder 
+and add the HTML files which is followed with required html files.
+For designing we use official bootstrap website to enhance outlook
+
+ * Urls.py
+ Attach the url as per views.py standard
+ make sure the correct urls have been attached to ignore errors.
+
+- And finally, run the application: python manage.py runserver
+ 
+For Admin Account, please create one with superuser!
+
+
+
